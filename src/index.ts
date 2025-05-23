@@ -1,7 +1,8 @@
 import "./lib/db";
 import express from "express";
 import cors from "cors";
-import countryRoutes from "./routes/country";
+import teacherRoutes from "./routes/teacher";
+import rankingRouter from "./routes/ranking";
 
 const app = express();
 app.use(cors());
@@ -15,10 +16,11 @@ app.use(cors({
 }));
 
 app.get("/", async (req, res) => {
-  res.json({ message: "Please visit /countries to view all the countries" });
+  res.json({ message: "Please visit /teacher or /ranking to view all the data" });
 });
 
-app.use("/countries", countryRoutes);
+app.use("/teacher", teacherRoutes);
+app.use("/ranking", rankingRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
