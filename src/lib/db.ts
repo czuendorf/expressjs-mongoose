@@ -17,10 +17,7 @@ async function seedDatabase() {
 
 mongoose.connect(process.env.MONGO_URL).then(async () => {
   console.log('✅ MongoDB verbunden');
-  
-  // if (process.env.NODE_ENV === 'development') {
   await seedDatabase();
-  // }
 });
 
 const database = mongoose.connection;
