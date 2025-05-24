@@ -21,3 +21,4 @@ const RankingSchema = new Schema({
 const RankingModel = model<IRanking>("Ranking", RankingSchema);
 
 export { RankingModel, IRanking };
+
