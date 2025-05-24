@@ -15,11 +15,12 @@ routes.get("/", async (req, res) => {
 
 routes.post("/", async (req, res) => {
   try {
-    const { name, picture } = req.body;
+    const { name, picture, description } = req.body;
 
     const newTeacher = await TeacherModel.create({
       id: Date.now(),
       name: name,
+      description: description,
       picture: picture
     });
     return res.status(201).json(newTeacher);

@@ -14,6 +14,9 @@ const TeacherSchema = new Schema({
   picture: {
     type: String,
   },
+  description: {
+    type: String,
+  },
   id: {
     type: String,
     unique: true,
