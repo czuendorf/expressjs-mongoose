@@ -17,7 +17,7 @@ routes.post("/", async (req, res) => {
   try {
     const { teacherId, emoji } = req.body;
 
-    if (emoji?.length != 1) {
+    if (!emoji || emoji?.length < 1) {
       return res.status(500).json({ error: `Emoji not well-formed: ${emoji} Length: ${emoji?.length}` });
     }
     const newRanking = await RankingModel.create({
