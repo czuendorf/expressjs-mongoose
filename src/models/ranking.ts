@@ -15,7 +15,6 @@ const RankingSchema = new Schema({
   },
   teacherId: {
     type: String,
-    unique: true,
   },
 });
 
